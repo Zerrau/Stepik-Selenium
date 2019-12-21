@@ -1,4 +1,4 @@
-https://stepik.org/course/575/syllabus
+Курс Stepic https://stepik.org/course/575/syllabus
 
 Сохранял задачи, только те которые считал сложными для запоминания
 
