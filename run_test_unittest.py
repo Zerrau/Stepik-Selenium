@@ -17,6 +17,7 @@ class TestAbs(unittest.TestCase):
         welcome_text_elt = browser.find_element_by_xpath('/html/body/div/h1')
         welcome_text = welcome_text_elt.text
         self.assertEqual(welcome_text, 'Congratulations! You have successfully registered!')
+        browser.quit()
 
     def test_abs2(self):
         link2 = 'http://suninjuly.github.io/registration2.html'
@@ -30,7 +31,8 @@ class TestAbs(unittest.TestCase):
 
         welcome_text_elt = browser.find_element_by_xpath('/html/body/div/h1')
         welcome_text = welcome_text_elt.text
-        self.assertEqual(welcome_text, welcome_text_elt.text, 'Congratulations! You have successfully registered!')
+        self.assertEqual(welcome_text, 'Congratulations! You have successfully registered!')
+        browser.quit()
 
 
 if __name__ == "__main__":
