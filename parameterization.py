@@ -3,7 +3,6 @@ import time
 import unittest
 import math
 
-answer = math.log(int(time.time()))
 link = "https://stepik.org/lesson/236895/step/1"
 browser = webdriver.Chrome()
 browser.implicitly_wait(5)
@@ -12,14 +11,14 @@ browser.implicitly_wait(5)
 class TestAbs(unittest.TestCase):
     def test_abs1(self):
         try:
+            answer = str(math.log(int(time.time())))
             browser.get(link)
-            browser.find_element_by_xpath(
-                '/html/body/div/div/div[2]/main/div/div[3]/div[3]/div[1]/div/article/div/div/div[2]/div/section/div/div[2]/div[2]/div/div/div/textarea').send_keys(
-                answer)
-            browser.find_element_by_xpath(
-                '/html/body/div/div/div[2]/main/div/div[3]/div[3]/div[1]/div/article/div/div/div[2]/div/section/div/div[2]/div[4]/button').clear()
+            browser.find_element_by_tag_name('textarea').send_keys(answer)
+            browser.find_element_by_tag_name('button').click()
+            answer = browser.find_element_by_tag_name('pre')
+            assert answer.text == 'Correct!', 'Not correct!'
         finally:
-            time.sleep(300)
+            time.sleep(3)
             browser.quit()
 
 
