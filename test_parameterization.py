@@ -22,7 +22,7 @@ def browser():
                                     "236904",
                                     "236905"])
 def test_abs1(browser, number):
-    browser.implicitly_wait(10)
+    browser.implicitly_wait(5)
     link = f"https://stepik.org/lesson/{number}/step/1"
     answer = str(math.log(int(time.time())))
     browser.get(link)
