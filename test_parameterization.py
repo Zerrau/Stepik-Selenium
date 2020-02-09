@@ -22,14 +22,14 @@ def browser():
                                     "236904",
                                     "236905"])
 def test_abs1(browser, number):
-    browser.implicitly_wait(5)
+    browser.implicitly_wait(10)
     link = f"https://stepik.org/lesson/{number}/step/1"
     answer = str(math.log(int(time.time())))
     browser.get(link)
     browser.find_element_by_tag_name('textarea').send_keys(answer)
     browser.find_element_by_tag_name('button').click()
     answer = browser.find_element_by_tag_name('pre')
-    assert answer.text == 'Correct!', 'Not correct!'
+    assert answer.text == 'Correct!', 'Answer not correct!'
     time.sleep(3)
 
 
